@@ -1,0 +1,533 @@
+﻿<Window x:Class="Veza_Desktop.TalkWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Veza_Desktop"
+        xmlns:WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        Title="VEZA" Background="{x:Null}" AllowsTransparency="True" Height="710.8" Width="1231.14" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+
+        <Grid.Effect>
+            <DropShadowEffect BlurRadius="10" Direction="314" RenderingBias="Quality" ShadowDepth="5" Color="Silver"/>
+
+        </Grid.Effect>
+        <StackPanel Style="{StaticResource TopDesign}" x:Name="LeftStack" VerticalAlignment="Top" Height="692" Margin="0,0,0,-1.6" Width="280" Background="DarkSlateGray">
+
+            <DockPanel>
+                <Label HorizontalContentAlignment="Left" x:Name="Logolbl" Content="VEZA" FontSize="20" FontWeight="ExtraBold"   HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Height="30" Width="231" FontFamily="Rockwell Extra Bold" Background="{x:Null}" Foreground="#F1F1F1" Panel.ZIndex="1"/>
+                <Image Style="{DynamicResource ThreeBarBtn}" x:Name="TripleBarBtn" MouseDown="TripleBarBtn_MouseDown" Source="Font\Image\identical(4).png" />
+
+            </DockPanel>
+            <Grid Style="{StaticResource ImageDesign}" MouseDown="UserProfile_MouseDown" x:Name="UserProfile" Height="77" Margin="0,0,0,0" Background="{x:Null}">
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius="10" Direction="320" RenderingBias="Performance" ShadowDepth="5" Color="#FF7C7C7C" Opacity="0.5"/>
+                </Grid.Effect>
+
+                <Border CornerRadius="0" BorderThickness="0" BorderBrush="White" >
+                    <Image Source="Font\Image\profileImage.png" x:Name="UserImg" HorizontalAlignment="Left" Margin="8,8,0,0" Height="60" VerticalAlignment="Top" Width="59"/>
+                </Border>
+                <Label Content="First Name" x:Name="Usernamelbl" HorizontalAlignment="Left" FontSize="24" Margin="90,1,0,0" VerticalAlignment="Top" Width="190" Height="40" Foreground="#F1F1F1"/>
+                <Label Content="Agent" x:Name="Positionlbl" HorizontalAlignment="Left" Margin="90,42,0,0" FontSize="14" VerticalAlignment="Top" Width="190" Height="34" Foreground="#F1F1F1"/>
+            </Grid>
+
+
+
+
+            <ToggleButton Style="{DynamicResource menubutonlar}" x:Name="DBBtn"  Margin="0,80,0,0" Checked="Dashboard_Click_Checked">
+                <StackPanel Orientation="Horizontal" Width="271" Height="49" >
+                    <Image Style="{StaticResource ImageStackSize}" Source="Font\Image\dashboard.png" x:Name="DashboardImg" />
+                    <Label Style="{StaticResource menulbl}" VerticalContentAlignment="Center" Content="Dashboard" x:Name="Dashboardlbl" Margin="0,0,0,-0.2" Width="224" />
+
+                </StackPanel>
+            </ToggleButton>
+            <ToggleButton Style="{DynamicResource menubutonlar}" x:Name="CCBtn" Checked="CC_Chat_Click_Checked">
+                <StackPanel Orientation="Horizontal" Width="271"  Height="49">
+                    <Image x:Name="CCImg" Style="{StaticResource ImageStackSize}" Source="Font\Image\admin.png" />
+                    <Label Style="{StaticResource menulbl}" VerticalContentAlignment="Center" Content="Chat with Customer" x:Name="Chatlbl" Margin="0,0,0,-0.2" Width="224" />
+
+                </StackPanel>
+            </ToggleButton>
+            <ToggleButton Style="{DynamicResource menubutonlar}"  x:Name="ACBtn" Checked="TalkWithAdmin_Checked">
+                <StackPanel Orientation="Horizontal" Width="271"  Height="49">
+                    <Image x:Name="ATImg" Style="{StaticResource ImageStackSize}" Source="Font\Image\inbox.png" />
+                    <Label  Style="{StaticResource menulbl}" VerticalContentAlignment="Center" Content="Talk with Admin" x:Name="Talklbl" Margin="0,0,0,-0.2" Width="224" />
+
+                </StackPanel>
+            </ToggleButton>
+            <ToggleButton Style="{DynamicResource menubutonlar}" x:Name="PauseBtn" Checked="Pause_Click_Checked">
+                <StackPanel Orientation="Horizontal" Width="271"  Height="49">
+                    <Image x:Name="PauseImg" Style="{StaticResource ImageStackSize}" Source="Font\Image\pause.png" />
+                    <Label Style="{StaticResource menulbl}" VerticalContentAlignment="Center" Content="Pause" x:Name="Pauselbl" Margin="0,0,0,-0.2" Width="223" />
+
+                </StackPanel>
+            </ToggleButton>
+
+            <ToggleButton Style="{DynamicResource menubutonlar}" x:Name="LogoutBtn"  Checked="LogoutBtn_Click_Checked">
+                <StackPanel Orientation="Horizontal" Width="270"  Height="49" >
+                    <Image x:Name="LogoutImg" Style="{StaticResource ImageStackSize}" Source="Font\Image\exit.png" />
+                    <Label Style="{StaticResource menulbl}" VerticalContentAlignment="Center" Content="Logout" x:Name="logoutlbl" Margin="0,0,0,-0.2" Width="221" />
+
+                </StackPanel>
+            </ToggleButton>
+            <Label x:Name="Copyrightlbl" Content=" © VEZA " Style="{StaticResource CopyrightFont}" Margin="0,230,0,0" />
+            <StackPanel.Effect>
+                <DropShadowEffect BlurRadius="10" Direction="320" RenderingBias="Performance" ShadowDepth="1" Color="#FF7C7C7C" Opacity="0.5"/>
+            </StackPanel.Effect>
+
+
+        </StackPanel>
+
+        <Grid x:Name="MainTextGrid" HorizontalAlignment="Left" Height="692" Margin="278,3,0,0" VerticalAlignment="Top" Width="931" Background="White">
+            <Image Style="{DynamicResource ThreeBarBtn}" x:Name="TripleBarBtn1" MouseDown="TripleBarBtn1_MouseDown" Source="Font/Image/new_Identical.png" />
+
+            <DockPanel HorizontalAlignment="Right" Height="30" LastChildFill="False" Margin="0,0,0,0" VerticalAlignment="Top" Width="60">
+                <Button x:Name="MinimizeBtn" Style="{DynamicResource MinimizeBtn}" Content="🗕" Height="Auto" Margin="0,0,0,0.4" Click="MinimizeBtn_Click" />
+                <Button x:Name="CloseBtn" Style="{DynamicResource CloseBtn}" VerticalAlignment="Top" FontWeight="Bold" Content="×" Click="CloseBtn_Click" Height="30" />
+
+            </DockPanel>
+            <!--<Image Style="{DynamicResource ThreeBarBtn}"   x:Name="TripleBarBtn" MouseDown="TripleBarBtn_MouseDown" Source="C:\Users\Farhan Aslam\source\repos\Veza-Desktop\Veza-Desktop\Font\Image\identical-black.png" />-->
+            <Ellipse x:Name="signal_lbl" HorizontalAlignment="Left" Height="14" Margin="411,8,0,0" Stroke="Black" VerticalAlignment="Top" Width="14" />
+            <Label x:Name="active_lbl" Content="ACTIVE" HorizontalContentAlignment="Left" Height="30" VerticalAlignment="Top" Margin="429,2,401,0"/>
+
+
+
+            <Grid x:Name="CustomerCareGrid" Style="{DynamicResource GridPanel}" Margin="0,108,0,0">
+
+                <Grid.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FFF1F1F1" Offset="0.395"/>
+                        <GradientStop Color="White" Offset="0.136"/>
+                        <GradientStop Color="#FFDDD5D5" Offset="0.754"/>
+                        <GradientStop Color="#FFF1EDED" Offset="0.576"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <StackPanel HorizontalAlignment="Left" Height="317" Margin="67,50,0,0" VerticalAlignment="Top" Width="207" Panel.ZIndex="1" Background="White">
+                    <StackPanel.Effect>
+                        <DropShadowEffect BlurRadius="10" Direction="320" RenderingBias="Performance" ShadowDepth="5" Color="#FF7C7C7C" Opacity="0.5"/>
+                    </StackPanel.Effect>
+                    <Label Content="Customer" HorizontalContentAlignment="Center" FontSize="16" Margin="0,0,0,0" VerticalAlignment="Top" Foreground="White" Background="#FF2F4F4F"/>
+                    <Label Content="Name" HorizontalContentAlignment="Left" FontSize="14" Margin="0,5,0,0" VerticalAlignment="Top" Width="207" Foreground="Black" FontWeight="Bold" Background="White"/>
+                    <Label Content="Farhan Aslam" HorizontalContentAlignment="Left" FontSize="12" Margin="0,5,0,0" VerticalAlignment="Top" Width="207" Foreground="#FF221F1F" FontWeight="Thin" Background="White"/>
+                    <Label Content="Network" HorizontalContentAlignment="Left" FontSize="14" Margin="0,5,0,0" VerticalAlignment="Top" Width="207" Foreground="Black" FontWeight="Bold" Background="White"/>
+                    <Label Content="Telenor" HorizontalContentAlignment="Left" FontSize="12" Margin="0,5,0,0" VerticalAlignment="Top" Width="207" Foreground="#FF221F1F" FontWeight="Thin" Background="White"/>
+                    <Label Content="Contact Number" HorizontalContentAlignment="Left" FontSize="14" Margin="0,5,0,0" VerticalAlignment="Top" Width="207" Foreground="Black" FontWeight="Bold" Background="White"/>
+                    <Label Content="+923400282336" HorizontalContentAlignment="Left" FontSize="12" Margin="0,5,0,0" VerticalAlignment="Top" Width="207" Foreground="#FF221F1F" FontWeight="Thin" Background="White" Height="80"/>
+                    <StackPanel Orientation="Horizontal" Height="30">
+                        <Button Style="{DynamicResource CancelBtn}" FontWeight="Bold" Content="Cancel" Margin="0,0,0,0" Width="106" />
+
+                        <Button Style="{DynamicResource AcceptBtn}" 
+                                Content="Talk" 
+                                Margin="0,0,0,0" 
+                                Width="103"
+                                Click="talkWithCustomer_Click"
+                                />
+                    </StackPanel>
+                </StackPanel>
+                <!--<Border Background="Transparent" BorderBrush="#FFA09C9C" BorderThickness="1" Margin="0,0,0,0">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="10" Direction="314" RenderingBias="Quality" ShadowDepth="5" Color="#FFA0A0A0"/>
+                    </Border.Effect>
+                </Border>-->
+            </Grid>
+
+        </Grid>
+
+        <Grid x:Name="NotificationGrid" HorizontalAlignment="Left"  Height="100" Margin="856,582,0,0" VerticalAlignment="Top" Width="345" Panel.ZIndex="1" Background="#FFF8FFAA" OpacityMask="Black">
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="10" Direction="320" RenderingBias="Performance" ShadowDepth="5" Color="#FF7C7C7C" Opacity="0.5"/>
+            </Grid.Effect>
+            <!--<Grid.Effect>
+                <DropShadowEffect BlurRadius="10" Direction="314" RenderingBias="Quality" ShadowDepth="5" Color="#FFA0A0A0"/>
+            </Grid.Effect>-->
+            <Image Source="Font\Image\email.png" HorizontalAlignment="Left" Height="40" Margin="19,3,0,57" VerticalAlignment="Center" Width="51" Panel.ZIndex="2"/>
+
+            <Label Content="NOTIFICATION" FontWeight="Bold" HorizontalContentAlignment="Left" FontSize="18" Margin="89,1,7,0" VerticalAlignment="Top" Foreground="#FF114F6F" Background="#FFF8FFAA"/>
+            <Label Content="New Messages has arrived" FontWeight="Thin" HorizontalContentAlignment="Center" FontSize="14" Margin="0,34,1,0" VerticalAlignment="Top" Foreground="Black" Background="#FFF8FFAA"/>
+            <StackPanel Orientation="Horizontal" Margin="0,60,0,0" Height="30" Background="#FF8B8383">
+                <Button Style="{DynamicResource DeclineBtn}" Content="Decline" Margin="0,0,0,0.4" Width="178" />
+                <Button Style="{DynamicResource ConfirmBtn}" Content="Accept" Margin="0,0,0,0.4" Width="182" />
+            </StackPanel>
+
+        </Grid>
+
+        <Grid x:Name="DashboardGrid" Style="{DynamicResource GridPanel}" Margin="281,108,0,0" Width="929">
+
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF1F1F1" Offset="0.395"/>
+                    <GradientStop Color="White" Offset="0.136"/>
+                    <GradientStop Color="#FFDDD5D5" Offset="0.754"/>
+                    <GradientStop Color="#FFF1EDED" Offset="0.576"/>
+                </LinearGradientBrush>
+
+            </Grid.Background>
+
+
+        </Grid>
+
+
+
+        <Grid x:Name="PauseGrid" Opacity="0.6" Style="{DynamicResource GridPanel}" Margin="281,108,0,0" Width="929">
+
+            <Grid.Background>
+                <ImageBrush ImageSource="Font/Image/pattern.jpg" Stretch="UniformToFill"/>
+            </Grid.Background>
+            <Label HorizontalContentAlignment="Center" Content="PAUSE" HorizontalAlignment="Left" Margin="158,201,0,0" VerticalAlignment="Top" Height="82" Width="373" FontSize="60" FontWeight="Bold" Foreground="Black" FontFamily="/Veza-Desktop;component/Font/#Montserrat" Background="{x:Null}"/>
+            <Label HorizontalContentAlignment="Center" Content="Have to do some work!!!" HorizontalAlignment="Left" Margin="207,277,0,0" VerticalAlignment="Top" Height="82" Width="373" FontSize="24" FontWeight="Bold" Foreground="Black" FontFamily="/Veza-Desktop;component/Font/#Montserrat" Background="{x:Null}"/>
+
+        </Grid>
+
+        <Grid x:Name="InboxGrid" Style="{DynamicResource GridPanel}" Margin="281,108,0,0" Width="929">
+
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF1F1F1" Offset="0.395"/>
+                    <GradientStop Color="White" Offset="0.136"/>
+                    <GradientStop Color="#FFDDD5D5" Offset="0.754"/>
+                    <GradientStop Color="#FFF1EDED" Offset="0.576"/>
+                </LinearGradientBrush>
+
+            </Grid.Background>
+        </Grid>
+
+        <Grid x:Name="ComposeGrid" Style="{DynamicResource GridPanel}" Margin="281,108,0,0" Width="929">
+
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF1F1F1" Offset="0.395"/>
+                    <GradientStop Color="White" Offset="0.136"/>
+                    <GradientStop Color="#FFDDD5D5" Offset="0.754"/>
+                    <GradientStop Color="#FFF1EDED" Offset="0.576"/>
+                </LinearGradientBrush>
+
+            </Grid.Background>
+            <Grid x:Name="filterGrid" Style="{StaticResource TopDesign}" HorizontalAlignment="Left" Height="49" VerticalAlignment="Top" Width="920" Margin="5,5,0,0" Background="DarkSlateGray">
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius="10" Direction="314" RenderingBias="Quality" ShadowDepth="2" Color="Silver"/>
+                </Grid.Effect>
+                <Label FontWeight="Bold" HorizontalContentAlignment="Right" Style="{StaticResource menulbl}" Content="Date" Margin="21,12,849,11" Width="Auto" />
+
+                <DatePicker Margin="92,13,630,6" RenderTransformOrigin="-4.33,1.006" BorderBrush="{x:Null}" />
+
+
+                <Button Style="{DynamicResource ComposeBtn}" x:Name="FilterBtn" Content="FILTER" HorizontalAlignment="Left" VerticalAlignment="Top" Click="FilterBtn_Click" Height="34" Width="120" Margin="768,7,0,0" FontSize="12" BorderThickness="0" BorderBrush="{x:Null}" />
+
+            </Grid>
+            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding LoadDataBinding}" CanUserResizeRows="False" Name="EmailInboxGrid" HorizontalAlignment="Left" Height="508" Margin="5,60,0,0" VerticalAlignment="Top" Width="920" Background="White" BorderBrush="{x:Null}">
+                <DataGrid.Effect>
+                    <DropShadowEffect BlurRadius="10" Direction="314" RenderingBias="Quality" ShadowDepth="2" Color="Silver"/>
+                </DataGrid.Effect>
+
+                <DataGrid.Columns>
+
+                    <DataGridTextColumn Header="Sender" Width="200" Binding="{Binding Id}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Description" Width="600" Binding="{Binding Activty}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Date" Width="100" Binding="{Binding Status}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </Grid>
+
+        <Grid x:Name="UserProfileGrid" Style="{DynamicResource GridPanel}" Margin="281,108,0,0" Width="929">
+
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF1F1F1" Offset="0.395"/>
+                    <GradientStop Color="White" Offset="0.136"/>
+                    <GradientStop Color="#FFDDD5D5" Offset="0.754"/>
+                    <GradientStop Color="#FFF1EDED" Offset="0.576"/>
+                </LinearGradientBrush>
+
+            </Grid.Background>
+            <!-- User Profile-->
+
+            <!--<Border BorderBrush="Black"
+                        BorderThickness="1">-->
+
+            <Grid Margin="40">
+
+                <Image 
+       x:Name="ProfilePic" 
+                       Style="{DynamicResource ProfilePic}"
+       HorizontalAlignment="Left"
+        Height="219" 
+       VerticalAlignment="Top" Width="220"
+                       Grid.Column="0" />
+
+                <Label Content="Tom Cruise" 
+                      Grid.Column="1"
+                          FontSize="22" Margin="0,0,461,210"
+                       x:Name="AgentName"
+                       />
+
+                <Label Content="Agent"
+                       Foreground="#2196F3"
+                      Grid.Column="1"
+                     
+                          FontSize="14" Margin="0,42,510,173"
+                      />
+
+                <Separator Grid.Column="1"
+                           VerticalAlignment="Center"
+                           Height="22" Margin="0,207,73,23"
+                           />
+                <Button x:Name="button1" Content="Change Picture" 
+                        Background="#337ab7" Foreground="White"
+                        FontSize="15" Style="{DynamicResource ChangeProfilePicButton}"
+                        Margin="12,226,64,242" Grid.RowSpan="2" Click="button1_Click"/>
+                <Button x:Name="button" Content="Edit Profile" Grid.Column="1" HorizontalAlignment="Left" Margin="413,6,0,0" VerticalAlignment="Top" Width="90" Height="37"/>
+
+
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+
+
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="270"/>
+                    <ColumnDefinition />
+
+
+                </Grid.ColumnDefinitions>
+
+            </Grid>
+            <Rectangle Fill="#FF2196F3" HorizontalAlignment="Left" Height="3" Margin="310,255,0,0" Stroke="#FF2196F3" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.5,0.5" StrokeThickness="3">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Label Content="About"
+                FontSize="14" Margin="306,226,505,320"
+                       
+                       />
+            <Label Content="Contact Information"
+                FontSize="12" Margin="306,284,505,272"
+                       Foreground="Gray"
+                       />
+            <Label Content="Phone :"
+                FontSize="13" Margin="306,317,558,229"
+                       
+                       />
+            <Label Content="Address :"
+                FontSize="13" Margin="306,355,558,191"
+                       
+                       />
+            <Label Content="Email :"
+                FontSize="13" Margin="306,393,558,153"
+                       
+                       />
+            <Label Content="Basic Information"
+                FontSize="12" Margin="306,436,505,120"
+                Foreground="Gray"
+                       />
+            <Label Content="Birthday :"
+                FontSize="13" Margin="306,469,558,77"
+                       
+                       />
+            <Label Content="Gender :"
+                FontSize="13" Margin="306,506,558,40"
+                       
+                       />
+            <Label Content="+92 3112081163"
+                Foreground="#2196F3"
+                     
+                FontSize="13" Margin="410,319,405,239"
+                      />
+            <Label Content="tom@gmail.com"
+                Foreground="#2196F3"
+                     
+                FontSize="13" Margin="410,390,393,157"
+                      />
+            <Label Content="Abc Area, Defense, Karachi."
+                Foreground="black"
+                     
+                FontSize="13" Margin="410,357,349,201"
+                      />
+            <Label Content="28/07/1996"
+                Foreground="black"
+                     
+                FontSize="13" Margin="410,471,443,87"
+                      />
+            <Label Content="Male"
+                Foreground="black"
+                     
+                FontSize="13" Margin="410,508,478,50"
+                      />
+            <Button x:Name="button1_Copy" Content="Save Picture" 
+                Background="#337ab7" Foreground="White"
+                FontSize="15" Style="{DynamicResource ChangeProfilePicButton}"
+                Margin="52,308,683,240" 
+                    Click="button1Copy_Click"/>
+
+
+
+        </Grid>
+
+        <!--Dashboard-->
+        <Grid x:Name="Dashboard" Style="{DynamicResource GridPanel}" Margin="281,107,0,0" Width="929">
+
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF1F1F1" Offset="0.395"/>
+                    <GradientStop Color="White" Offset="0.136"/>
+                    <GradientStop Color="#FFDDD5D5" Offset="0.754"/>
+                    <GradientStop Color="#FFF1EDED" Offset="0.576"/>
+                </LinearGradientBrush>
+
+            </Grid.Background>
+
+            <Rectangle Fill="DarkSlateGray" 
+                       HorizontalAlignment="Left" Margin="47,116,0,346" 
+                       Stroke="Red" StrokeDashArray="1 2"
+                       Width="232"
+                       />
+            <Rectangle Fill="DarkSlateGray" 
+                HorizontalAlignment="Left" Margin="337,116,0,346" 
+                       
+                Width="232"
+                       />
+            <Rectangle Fill="DarkSlateGray" 
+                HorizontalAlignment="Left" Margin="625,116,0,346" 
+                       
+                Width="232"
+                       />
+            <Label Content="Total Calls" 
+                   HorizontalAlignment="Left" 
+                   Margin="51,123,0,0" 
+                   VerticalAlignment="Top" 
+                   Width="114"
+                   FontSize="23px"
+                   Foreground="White"/>
+
+            <Label Content="Accepted Calls" 
+                HorizontalAlignment="Left" 
+                Margin="343,123,0,0" 
+                VerticalAlignment="Top" 
+                Width="160"
+                FontSize="23px"
+                   Foreground="White"/>
+
+            <Label Content="Rejected Calls" 
+                HorizontalAlignment="Left" 
+                Margin="631,123,0,0" 
+                VerticalAlignment="Top" 
+                Width="160"
+                FontSize="23px"
+                   Foreground="White"/>
+
+            <Label x:Name="totalCalls"
+                Content="Count" 
+                HorizontalAlignment="Left" 
+                Margin="153,184,0,0" 
+                VerticalAlignment="Top" 
+                Width="100"
+                FontSize="30px"
+                   Foreground="White"
+                  />
+
+            <Label x:Name="acceptedCalls"
+                Content="Count" 
+                HorizontalAlignment="Left" 
+                Margin="443,184,0,0" 
+                VerticalAlignment="Top" 
+                Width="100"
+                FontSize="30px"
+                Foreground="White"/>
+
+            <Label x:Name="rejectedCalls"
+                Content="Count" 
+                HorizontalAlignment="Left" 
+                Margin="737,184,0,0" 
+                VerticalAlignment="Top" 
+                Width="100"
+                FontSize="30px"
+                Foreground="White"/>
+            <Rectangle Fill="DarkSlateGray" 
+                HorizontalAlignment="Left" Margin="47,324,0,138" 
+                       
+                Width="232"
+                       />
+
+            <Label 
+                Content="Daily Calls" 
+                HorizontalAlignment="Left" 
+                Margin="55,337,0,0" 
+                VerticalAlignment="Top" 
+                Width="162"
+                FontSize="23px"
+                Foreground="White"/>
+
+            <Label x:Name="dailyCalls"
+                Content="Count" 
+                HorizontalAlignment="Left" 
+                Margin="153,394,0,0" 
+                VerticalAlignment="Top" 
+                Width="100"
+                FontSize="30px"
+                Foreground="White"
+                />
+
+            <Grid x:Name="talkToAdmin"
+                Background="LightGray"
+                  HorizontalAlignment="Left"
+                  Height="479" Margin="47,36,0,0" 
+                  VerticalAlignment="Top" Width="831">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="1*" />
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="0.5*" />
+                    <RowDefinition Height="80" />
+                </Grid.RowDefinitions>
+
+                <TextBox x:Name="textBox1" 
+                         Grid.Column="0" Grid.Row="0" 
+                         HorizontalAlignment="Left" 
+                         Height="267" Margin="16,24,0,0" 
+                         TextWrapping="Wrap" 
+                         
+                         VerticalAlignment="Top" 
+                         Width="512"/>
+
+                <TextBox x:Name="textBox2" 
+                        Grid.Column="0" Grid.Row="1" 
+                         HorizontalAlignment="Left" 
+                         Height="60" Margin="16,10,0,0" 
+                         TextWrapping="Wrap" 
+                          
+                         VerticalAlignment="Top" 
+                         Width="512"/>
+
+                <Button x:Name="sendbutton1" 
+                    Grid.Column="0" Grid.Row="2" 
+                    Content="Send" 
+                    HorizontalAlignment="Left" 
+                    Margin="407,10,0,0" 
+                    VerticalAlignment="Top" Width="121" Height="42"
+                        Click="sendbutton1_Click"/>
+
+
+            </Grid>
+
+        </Grid>
+
+
+
+
+    </Grid>
+
+</Window>

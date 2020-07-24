@@ -1,0 +1,21 @@
+﻿<Window x:Class="Veza_Desktop.MsgWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Veza_Desktop"
+        mc:Ignorable="d"
+        Title="MsgWindow" Height="403.845" Width="359.354">
+    <Grid>
+        <StackPanel 
+           Orientation="Vertical" Margin="23,19,30,22">
+            <Label Content="Number" Height="34"/>
+            <TextBox Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" />
+<Separator Height="61" />
+            <Label Content="Message" Height="35"/>
+            <TextBox Height="115" TextWrapping="Wrap"/>
+            <Button Content="Send" Margin="217,15,0,0" Height="25"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

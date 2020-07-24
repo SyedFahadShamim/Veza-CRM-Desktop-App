@@ -1,0 +1,11 @@
+c:\users\syed fahad shamim\documents\visual studio 2015\Projects\Client and Server Communication\Server Side\bin\Debug\Server Side.exe.config
+c:\users\syed fahad shamim\documents\visual studio 2015\Projects\Client and Server Communication\Server Side\bin\Debug\Server Side.exe
+c:\users\syed fahad shamim\documents\visual studio 2015\Projects\Client and Server Communication\Server Side\bin\Debug\Server Side.pdb
+c:\users\syed fahad shamim\documents\visual studio 2015\Projects\Client and Server Communication\Server Side\obj\Debug\Server Side.exe
+c:\users\syed fahad shamim\documents\visual studio 2015\Projects\Client and Server Communication\Server Side\obj\Debug\Server Side.pdb
+D:\Projects\Client and Server Communication\Server Side\bin\Debug\Server Side.exe.config
+D:\Projects\Client and Server Communication\Server Side\obj\Debug\Server Side.exe
+D:\Projects\Client and Server Communication\Server Side\obj\Debug\Server Side.pdb
+D:\Projects\Client and Server Communication\Server Side\bin\Debug\Server Side.exe
+D:\Projects\Client and Server Communication\Server Side\bin\Debug\Server Side.pdb
+D:\Projects\Client and Server Communication\Server Side\obj\Debug\Server Side.csprojResolveAssemblyReference.cache
